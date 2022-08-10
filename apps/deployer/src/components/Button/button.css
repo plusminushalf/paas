@@ -1,0 +1,21 @@
+.paas-button:hover {
+  transform: scale(1.025);
+}
+
+.paas-button {
+  transition: 0.125s ease;
+  padding: 14px;
+  background: #0e76fd;
+  cursor: pointer;
+  border: 0;
+  border-radius: 12px;
+  color: #fff;
+  font-family: "Roboto Mono", monospace;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.pass-button-disabled {
+  background: #0e76fda6;
+  cursor: not-allowed;
+}

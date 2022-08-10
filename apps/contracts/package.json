@@ -1,0 +1,43 @@
+{
+  "name": "@paas/contracts",
+  "version": "0.0.01",
+  "private": true,
+  "description": "The contracts needed for paymaster as a service.",
+  "main": "index.js",
+  "repository": "https://github.com/plusminushalf/testnet-wallet",
+  "author": "garvitdelhi@gmail.com",
+  "license": "MIT",
+  "scripts": {
+    "deploy:localhost:factory": "hardhat run --network localhost scripts/deploy/factory.js",
+    "deploy:mumbai:factory": "hardhat run --network mumbai scripts/deploy/factory.js",
+    "deploy:localhost:paymaster": "hardhat run --network localhost scripts/deploy/paymaster.js",
+    "deploy:mumbai:paymaster": "hardhat run --network mumbai scripts/deploy/paymaster.js",
+    "get:localhost:paymasterProxy": "hardhat run --network localhost scripts/getPaymasterProxyByteCode.js"
+  },
+  "devDependencies": {
+    "@ethersproject/abi": "^5.6.4",
+    "@ethersproject/providers": "^5.6.8",
+    "@nomicfoundation/hardhat-chai-matchers": "^1.0.2",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.3",
+    "@nomicfoundation/hardhat-toolbox": "^1.0.2",
+    "@nomiclabs/hardhat-ethers": "^2.1.0",
+    "@nomiclabs/hardhat-etherscan": "^3.1.0",
+    "@typechain/ethers-v5": "^10.1.0",
+    "@typechain/hardhat": "^6.1.2",
+    "chai": "^4.3.6",
+    "ethers": "^5.6.9",
+    "hardhat": "^2.10.1",
+    "hardhat-gas-reporter": "^1.0.8",
+    "prettier": "^2.7.1",
+    "prettier-plugin-solidity": "^1.0.0-dev.23",
+    "solidity-coverage": "^0.7.21",
+    "typechain": "^8.1.0"
+  },
+  "dependencies": {
+    "@chainlink/contracts": "^0.4.2",
+    "@nomiclabs/hardhat-ethers": "^2.1.0",
+    "@openzeppelin/contracts": "^4.7.2",
+    "@openzeppelin/contracts-upgradeable": "^4.7.2",
+    "dotenv": "^16.0.1"
+  }
+}

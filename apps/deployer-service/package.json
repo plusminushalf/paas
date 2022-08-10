@@ -1,0 +1,16 @@
+{
+  "name": "@paas/deployer-service",
+  "version": "0.0.1",
+  "description": "This service is the backed for deployer frotend",
+  "main": "index.js",
+  "author": "garvitdelhi@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1"
+  },
+  "scripts": {
+    "start:dev": "nodemon index.js"
+  }
+}

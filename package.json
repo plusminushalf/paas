@@ -11,5 +11,9 @@
     "packages": [
       "apps/*"
     ]
+  },
+  "scripts": {
+    "dev-deployer": "yarn workspace @paas/deployer run start",
+    "dev-deployer-service": "yarn workspace @paas/deployer-service run start:dev"
   }
 }
