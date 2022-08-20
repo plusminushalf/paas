@@ -1,14 +1,14 @@
-const dotenv = require("dotenv");
-dotenv.config();
+import { config } from "dotenv";
+config();
 
-require("@nomicfoundation/hardhat-toolbox");
-require("@nomiclabs/hardhat-ethers");
-require("@nomiclabs/hardhat-etherscan");
-require("solidity-coverage");
+import "@nomicfoundation/hardhat-toolbox";
+import "@nomiclabs/hardhat-ethers";
+import "@nomiclabs/hardhat-etherscan";
+import "solidity-coverage";
 
-const config = {
+module.exports = {
   solidity: {
-    version: "0.8.9",
+    version: "0.8.12",
   },
   networks: {
     mumbai: {
@@ -21,5 +21,3 @@ const config = {
     apiKey: process.env.PAAS_CONTRACTS_POLYGONSCAN_API_KEY || "",
   },
 };
-
-exports.default = config;

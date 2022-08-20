@@ -4,10 +4,11 @@
 // You can also run a script with `npx hardhat run <script>`. If you do that, Hardhat
 // will compile your contracts, add the Hardhat Runtime Environment's members to the
 // global scope, and execute the script.
-const hre = require("hardhat");
+import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
+import { ethers } from "hardhat";
 
 async function main() {
-  const [factoryDeployer] = await ethers.getSigners();
+  const [factoryDeployer]: Array<SignerWithAddress> = await ethers.getSigners();
 
   // Deploy factory
   console.log("----------- DEPLOY FACTORY -----------");
