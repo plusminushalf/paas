@@ -12,6 +12,7 @@ contract VerifyingPaymaster is BasePaymaster {
 
     address public verifyingSigner;
     uint256 public maxCost;
+    string public name;
 
     constructor() BasePaymaster() {}
 
@@ -21,11 +22,13 @@ contract VerifyingPaymaster is BasePaymaster {
     function initialize(
         IEntryPoint[] memory _entryPoints,
         address _verifyingSigner,
-        uint256 _maxCost
+        uint256 _maxCost,
+        string calldata _name
     ) external initializer {
         initialize(_entryPoints, _verifyingSigner);
         verifyingSigner = _verifyingSigner;
         maxCost = _maxCost;
+        name = _name;
     }
 
     /**
