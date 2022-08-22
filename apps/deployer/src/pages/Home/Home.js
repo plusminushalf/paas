@@ -7,6 +7,7 @@ import CreatePaymaster from "../CreatePaymaster/CreatePaymaster";
 import { Paymasters } from "../Paymasters/Paymasters";
 import Paymaster from "../Paymaster/Paymaster";
 import PaymasterDeposit from "../PaymasterDeposit/PaymasterDeposit";
+import StakePaymaster from "../StakePaymaster/StakePaymaster";
 
 const Home = () => {
   const { isConnected } = useAccount();
@@ -49,6 +50,15 @@ const Home = () => {
         element={
           <ProtectedRoute authenticated={isConnected}>
             <PaymasterDeposit />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/paymasters/:address/stake"
+        element={
+          <ProtectedRoute authenticated={isConnected}>
+            <StakePaymaster />
           </ProtectedRoute>
         }
       />

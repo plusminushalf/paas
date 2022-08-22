@@ -8,6 +8,8 @@
   "author": "garvitdelhi@gmail.com",
   "license": "MIT",
   "scripts": {
+    "verify": "hardhat verify",
+    "compile": "hardhat compile",
     "deploy:localhost:factory": "hardhat run --network localhost scripts/deploy/factory.js",
     "deploy:mumbai:factory": "hardhat run --network mumbai scripts/deploy/factory.js",
     "deploy:localhost:paymaster_impl": "hardhat run --network localhost scripts/deploy/paymaster.js",

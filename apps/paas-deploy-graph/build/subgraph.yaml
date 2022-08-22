@@ -6,7 +6,7 @@ dataSources:
     name: SingletonFactory
     network: mumbai
     source:
-      address: "0x1a14C579F8bF358B0a673A2480a7091cBcdc751c"
+      address: "0x3dDca9fB0082868d8A5403eE0D92794C4F947AA1"
       abi: SingletonFactory
       startBlock: 27712680
     mapping:

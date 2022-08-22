@@ -13,7 +13,7 @@ const { default: Dashboard } = require("../../components/Dashboard/Dashboard");
 
 const UNCLOCK_DELAY = 5 * 60;
 
-const PaymasterDeposit = () => {
+const StakePaymaster = () => {
   const { isConnected } = useAccount();
   const [amount, setAmount] = useState(undefined);
   const [loading, setLoading] = useState(false);
@@ -24,33 +24,33 @@ const PaymasterDeposit = () => {
   const { address } = useParams();
 
   const addStake = async () => {
+    if (!isConnected) return;
+    console.log("here");
     setLoading(1);
-    if (isConnected) {
-      const PaymasterContract = new Contract(
-        address,
-        PaymasterArtifact.abi,
-        signer
-      );
+    const PaymasterContract = new Contract(
+      address,
+      PaymasterArtifact.abi,
+      signer
+    );
 
-      const EntryPointContract = new Contract(
-        process.env.REACT_APP_ENTRY_POINT_ADDRESS,
-        EntryPointArtifact.abi,
-        signer
-      );
+    const EntryPointContract = new Contract(
+      process.env.REACT_APP_ENTRY_POINT_ADDRESS,
+      EntryPointArtifact.abi,
+      signer
+    );
 
-      try {
-        const transaction = await PaymasterContract.deposit(
-          EntryPointContract.address,
-          {
-            value: ethers.utils.parseEther(amount),
-          }
-        );
-        setTransaction(transaction);
-        setLoading(2);
-      } catch (e) {
-        setLoading(0);
-      }
-    } else {
+    try {
+      const transaction = await PaymasterContract.addStake(
+        EntryPointContract.address,
+        UNCLOCK_DELAY,
+        {
+          value: ethers.utils.parseEther(amount),
+        }
+      );
+      setTransaction(transaction);
+      setLoading(2);
+    } catch (e) {
+      console.log(e);
       setLoading(0);
     }
   };
@@ -78,7 +78,7 @@ const PaymasterDeposit = () => {
           >
             <FontAwesomeIcon size="xl" icon={faAngleLeft} />
           </div>
-          <h1>Deposit ETH</h1>
+          <h1>Stake ETH in paymaster</h1>
         </div>
         <input
           value={amount}
@@ -100,7 +100,7 @@ const PaymasterDeposit = () => {
           onClick={addStake}
         >
           {loading <= 1 ? (
-            `Add deposit`
+            `Add Stake`
           ) : (
             <TransactionStatus
               transaction={transaction.hash}
@@ -113,4 +113,4 @@ const PaymasterDeposit = () => {
   );
 };
 
-export default PaymasterDeposit;
+export default StakePaymaster;

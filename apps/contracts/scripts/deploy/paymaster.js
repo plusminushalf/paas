@@ -17,21 +17,20 @@ async function main() {
     factoryAddress
   );
 
-  const Paymaster = await ethers.getContractFactory("DappPaymaster");
-  const PaymasterInitCode =
-    Paymaster.getDeployTransaction(entryPointAddress).data;
+  const Paymaster = await ethers.getContractFactory("VerifyingPaymaster");
+  const PaymasterInitCode = Paymaster.getDeployTransaction().data;
   const PaymasterSalt = ethers.utils.formatBytes32String(
     String.fromCharCode(Date.now())
   );
-  const paymasterDeployTx = await singletonFactory.deploy(
+  const paymasterDeployTx = await singletonFactory.deployContract(
     PaymasterInitCode,
     PaymasterSalt
   );
   await paymasterDeployTx.wait();
 
   const paymasterAddress = await singletonFactory.computeAddress(
-    PaymasterSalt,
-    PaymasterInitCode
+    PaymasterInitCode,
+    PaymasterSalt
   );
   console.log("Paymaster Addr: ", paymasterAddress);
 }

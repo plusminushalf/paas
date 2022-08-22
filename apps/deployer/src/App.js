@@ -44,12 +44,7 @@ export default function App() {
       <BrowserRouter>
         <WagmiConfig client={wagmiClient}>
           <RainbowKitProvider theme={theme} chains={chains}>
-            <MoralisProvider
-              serverUrl="https://matydhrxjhuo.usemoralis.com:2053/server"
-              appId="z9VzleddwlfgCOE4hPNRd9S2yFijjG5w5UwyPVgP"
-            >
-              <Home />
-            </MoralisProvider>
+            <Home />
           </RainbowKitProvider>
         </WagmiConfig>
       </BrowserRouter>
