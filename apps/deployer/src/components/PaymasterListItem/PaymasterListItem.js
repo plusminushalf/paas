@@ -227,7 +227,7 @@ const PaymasterListItem = ({ paymaster, expandedView = false }) => {
     ],
   });
 
-  const [staked, deposit, name] = data;
+  const [staked = false, deposit = 0, name = ""] = data || [];
 
   return staked ? (
     <StakedPaymasterListItem
