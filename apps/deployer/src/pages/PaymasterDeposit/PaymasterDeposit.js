@@ -6,8 +6,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useAccount, useSigner } from "wagmi";
 import { Button } from "../../components/Button/Button";
 import TransactionStatus from "../../components/TransactionStatus.js/TransactionStatus";
-import EntryPointArtifact from "../../artifacts/EntryPoint.json";
-import PaymasterArtifact from "../../artifacts/VerifyingPaymaster.json";
+import EntryPointArtifact from "../../deployer-artifacts/EntryPoint.json";
+import PaymasterArtifact from "../../deployer-artifacts/VerifyingPaymaster.json";
 
 const { default: Dashboard } = require("../../components/Dashboard/Dashboard");
 

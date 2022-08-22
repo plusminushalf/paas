@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useContractReads } from "wagmi";
 import Dashboard from "../../components/Dashboard/Dashboard";
-import entryPointArtifact from "../../artifacts/EntryPoint.json";
+import entryPointArtifact from "../../deployer-artifacts/EntryPoint.json";
 import PaymasterListItem from "../../components/PaymasterListItem/PaymasterListItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";

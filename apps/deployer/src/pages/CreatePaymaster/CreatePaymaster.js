@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { Button } from "../../components/Button/Button";
 import { useAccount, useSigner } from "wagmi";
 import { ContractFactory, Contract, ethers } from "ethers";
-import PaymasterProxy from "../../artifacts/PaymasterProxy.json";
-import VerifyingPaymaster from "../../artifacts/VerifyingPaymaster.json";
-import SingletonFactory from "../../artifacts/SingletonFactory.json";
+import PaymasterProxy from "../../deployer-artifacts/PaymasterProxy.json";
+import VerifyingPaymaster from "../../deployer-artifacts/VerifyingPaymaster.json";
+import SingletonFactory from "../../deployer-artifacts/SingletonFactory.json";
 import Dashboard from "../../components/Dashboard/Dashboard";
 
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
