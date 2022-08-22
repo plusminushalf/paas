@@ -49,9 +49,7 @@ const StakedPaymasterListItem = ({
                   marginTop: -32,
                 }}
               >
-                <p style={{ color: "#999292" }}>
-                  {paymaster.createdContract.substr(0, 16)}...
-                </p>
+                <p style={{ color: "#999292" }}>{paymaster.createdContract}</p>
               </div>
             </div>
             <div
