@@ -1,4 +1,3 @@
-import axios from "axios";
 import { createClient } from "urql";
 
 const GRAPH_APIURL =
